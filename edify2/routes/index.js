@@ -54,6 +54,7 @@ router.route('/')
     .get((req, res) => {
       res.render('edit-announcements')
     })
+
     .post((req, res) => {
       // let title = req.body.title;
       let content = req.body.content;

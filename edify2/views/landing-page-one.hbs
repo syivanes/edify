@@ -1,10 +1,10 @@
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-4">Beginning of something great?!</h1>
-    <p class="lead">This is a placeholder</p>
+    <h1 class="display-4">Edify</h1>
+    <p class="lead">A live learning management system</p>
   </div>
   <br><br>
-    <div class="dropdown">
+  <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Edit Options
   </button>
@@ -12,12 +12,20 @@
     <a href="./edit-announcements" class="dropdown-item" >Create New Announcement</a>
     <a href="./edit-classnotes" class="dropdown-item" >Create New Classnote</a>
   </div>
-
 </div>
-  <div class="announce-box">
-  {{!-- {{title}} --}}
-  {{datePublished}}
-  {{content}}
+</div>
+  <div class="row col-sm-12">
+  <div class="col-sm-6 text-center">Class Notes
+    <br>
+    <a href="#">{{title}}
+   </a> <br>
+   {{notes}}
+  </div>
+  <div class="col-sm-6 text-center">Announcements
+    <br>
+   {{content}}
+  </div>
+  
   </div>
 
   

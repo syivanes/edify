@@ -10,6 +10,8 @@ var urlencoded = bodyParser.urlencoded();
 //   res.render('selection');
 // });
 
+const Announcement = require('../models/announcement');
+const Classnote = require('../models/classnote');
 
 router.route('/')
   .get((req, res)=>{
@@ -33,27 +35,44 @@ router.route('/')
     .get((req, res) => {
       res.render('edit-classnotes')
     })
-    .post((req, res) =>{
+    .post((req, res) => {
       let title = req.body.title;
-      let notes = req.body.notes;
-      console.log(title, notes)
-      res.render('landing-page-one', {
+      let content = req.body.content;
+
+      Classnote.create({
         title: title,
-        notes: notes,
+        content: content        
+      }).then(result => {
+        res.render('landing-page-one', {
+          title: result.title,
+          content: result.content
+        })
       })
     })
 
   router.route('/edit-announcements')
-    .get((req, res) =>{
+    .get((req, res) => {
       res.render('edit-announcements')
     })
-    .post((req, res) =>{
-      let title = req.body.title;
-      let content= req.body.content;
-      console.log(title, content)
-      res.render('landing-page-one',{
-        title: title,
-        content: title
+    .post((req, res) => {
+      // let title = req.body.title;
+      let content = req.body.content;
+      // let datePublished = Date.now();
+      
+      // console.log(content, datePublished)
+
+      Announcement.create({
+        content: content
+        // date_published: datePublished
+      }).then(result => {
+        console.log(result)
+          res.render('landing-page-one', {
+          datePublished: result.createdAt,
+          content: result.content
+        })
+        // res.send(result)
+      }).catch(err => {
+        res.send('we got an error')
       })
     })
     

@@ -39,7 +39,7 @@ router.route('/')
       console.log(title, notes)
       res.render('landing-page-one', {
         title: title,
-        notes: notes,
+        notes: notes
       })
     })
 
@@ -52,8 +52,7 @@ router.route('/')
       let content= req.body.content;
       console.log(title, content)
       res.render('landing-page-one',{
-        title: title,
-        content: title
+        content: content
       })
     })
     

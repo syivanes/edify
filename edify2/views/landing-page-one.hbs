@@ -21,10 +21,16 @@
    </a> <br>
    {{notes}}
   </div>
-  <div class="col-sm-6 text-center">Announcements
-    <br>
-   {{content}}
-  </div>
+  
+    <div class="col-sm-6 text-center">Announcements
+      {{#each announcements}}
+        <br>
+        {{datePublished}}
+        <br>
+        {{content}}
+        
+      {{/each}}
+    </div>
   
   </div>
 

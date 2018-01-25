@@ -1,5 +1,3 @@
-// import { Router } from '../../../../Library/Caches/typescript/2.6/node_modules/@types/express';
-
 var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
@@ -37,11 +35,11 @@ router.route('/')
     })
     .post((req, res) => {
       let title = req.body.title;
-      let content = req.body.content;
+      let notes = req.body.notes;
 
       Classnote.create({
         title: title,
-        content: content        
+        content: notes       
       }).then(result => {
         res.render('landing-page-one', {
           title: result.title,
@@ -59,45 +57,46 @@ router.route('/')
       // let title = req.body.title;
       let content = req.body.content;
       // let datePublished = Date.now();
-      
-      // console.log(content, datePublished)
-
       Announcement.create({
         content: content
         // date_published: datePublished
-      }).then(result => {
-        console.log(result)
-          res.render('landing-page-one', {
-          datePublished: result.createdAt,
-          content: result.content
-        })
-        // res.send(result)
-      }).catch(err => {
+      })
+        .then((results) => {
+            Announcement.findAll()
+              .then(allAnnounced => {
+                const announcements = allAnnounced.map(a => {
+                  return {
+                    datePublished: a.createdAt,
+                    content: a.content
+                  }
+                })
+                res.render('landing-page-one',{
+                  announcements: announcements
+                })
+            })
+       })
+      .catch(err => {
         res.send('we got an error')
       })
     })
-    
 
-/* defines user role */
-// router.post('/selection', (req, res) => {
-//   console.log('hitten selection route!!')
-//   let role = req.body.user;
-//   console.log(role);
-//   /* User selection */
-//   if (role === 'Instructor'){
-//     console.log('selection is instructor')
-//     res.render('landing-page-one')
-//   }else{
-//     console.log('selection is student')
-//     console.log('landing page two')
-//     res.render('landing-page-two')
-//   }
-// });
 
-// router.post('/edit-classnotes', urlencoded, (req, res) => {
-//   console.log(req.body)
-// });
+  router.route('/landing-page-one')
+    .get((req, res) => {
+      Announcement.findAll()
+        .then(allAnnounced => {
+          const announcements = allAnnounced.map(a => {
+            return {
+              datePublished: a.createdAt,
+              content: a.content
+            }
+          })
 
+          res.render('landing-page-one', {
+            announcements: announcements
+          })
+        })
+    })
 
 
 module.exports = router;

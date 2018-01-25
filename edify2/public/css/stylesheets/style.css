@@ -7,3 +7,12 @@
   height: 30%; 
   
 }
+
+.jumbotron{
+  color: bisque;
+  background-color: #78B6FF;
+}
+.btn{
+  color: black;
+  border: 1px solid black;
+}

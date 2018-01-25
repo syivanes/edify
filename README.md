@@ -51,3 +51,8 @@ The project captures, retrieves and submits data to a PostgreSQL database
 * jQuery
 * PostgreSQL 
 * Sequelize.js
+
+## Development Team: 
+* **[Geoffrey Banks](https://github.com/gdbanks88)
+* **[Sergey Ivanes](https://github.com/syivanes)
+* **[Jason Boykin](https://github.com/jboykin214)

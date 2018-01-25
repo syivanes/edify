@@ -37,11 +37,11 @@ router.route('/')
     })
     .post((req, res) => {
       let title = req.body.title;
-      let content = req.body.content;
+      let notes = req.body.notes;
 
       Classnote.create({
         title: title,
-        content: content        
+        content: notes       
       }).then(result => {
         res.render('landing-page-one', {
           title: result.title,

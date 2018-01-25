@@ -34,6 +34,12 @@ DigitalCrafts group project #2. Live learning management system for connecting s
 5. Oauth Facebook, Google, and Linkedin sign-in page
 6. Tracked users profiles 
 
+## Challenges 
+
+1. Connecting routes to database
+2. Understanding how to route everything initially
+3. Understanding how to and best practices for file structure
+
 
 ## Data 
 

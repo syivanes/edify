@@ -2,7 +2,7 @@
 # edify
 DigitalCrafts group project #2. Platform for students and teachers for staying up to date with the coursework.
 
-![alt text](https://raw.githubusercontent.com/master/edify2/public/ScreenShots/image1.png)
+![alt text](/master/edify2/public/ScreenShots/image1.png)
 
 # Edify
 

@@ -1,8 +1,6 @@
 
-# edify
-DigitalCrafts group project #2. Platform for students and teachers for staying up to date with the coursework.
-
 # Edify
+DigitalCrafts group project #2. Platform for students and teachers for staying up to date with the coursework.
 
 # Overview
 DigitalCrafts group project #2. Live learning management system for connecting students and teachers in an immersive software learning environment. 

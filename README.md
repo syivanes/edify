@@ -32,7 +32,9 @@ DigitalCrafts group project #2. Live learning management system for connecting s
 3. Scheduling option for students to schedule time with instructors
 4. Group messenger for students on group projects
 5. Oauth Facebook, Google, and Linkedin sign-in page
-6. Tracked users profiles 
+6. Tracked users profiles
+7. Registration page 
+8. Security (i.e. encryption for users, encrypting data, etc.)
 
 ## Challenges 
 
